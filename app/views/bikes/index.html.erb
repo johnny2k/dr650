@@ -1,0 +1,21 @@
+<% if !@bikes.nil? %>
+  <table border="1">
+  <tr>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th><URL</th>
+  </tr>
+  <% @bikes.each do |bike| %>
+  <tr> 
+    <td><%= bike.price.nil? ? "NA" : bike.price %>
+    <td><%= bike.text %></td>
+    <td><%= bike.location%></td>
+    <td><a href="http://<%= bike.href %>">The bike</a></td>
+    
+  </tr>
+  <% end %>
+  </table>
+<% else %>
+  There ARE NO BIKES!!
+<% end %>

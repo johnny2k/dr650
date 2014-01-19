@@ -1,3 +1,7 @@
+<p>I changed the way this works and it's still a work-in-progress.</p>
+<p>This now searches for the terms "dr 650" and "dr650" instead of pulling all motorcycle results</p>
+<p>Next change is to search other major cities and their nearby locations but this will take some additional</p>
+<p>methods I'll need to write. For now I've got to go buy groceries and make a pre-fornication meal.</p>
 <% if !@bikes.nil? %>
   <table border="1">
   <tr>
@@ -11,7 +15,7 @@
     <td><%= bike.price.nil? ? "NA" : bike.price %>
     <td><%= bike.text %></td>
     <td><%= bike.location%></td>
-    <td><a href="http://<%= bike.href %>">The bike</a></td>
+    <td><a href="<%= bike.href %>">The bike</a></td>
     
   </tr>
   <% end %>

@@ -2,3 +2,2636 @@
 SQLite3::SQLException: no such table: bikes: SELECT  "bikes".* FROM "bikes"   ORDER BY "bikes"."id" ASC LIMIT 1
   [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes" ORDER BY "bikes"."id" ASC LIMIT 1[0m
 SQLite3::SQLException: no such table: bikes: SELECT  "bikes".* FROM "bikes"   ORDER BY "bikes"."id" ASC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:34:34 -0800
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.2) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.2) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1933877443223685421__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBikes (20131228011544)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "bikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255), "href" varchar(255), "price" varchar(255), "location" varchar(255), "has_img" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131228011544"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCities (20131228011743)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nearby" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20131228011743"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:34:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (1.0ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 123552ms (Views: 249.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:36:59 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 117204ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 17:38:56 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:40:14 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 118808ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 17:42:13 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:44:06 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed   in 89807ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:45:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed   in 709608ms
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:58:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:31: syntax error, unexpected keyword_end, expecting end-of-input):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1181455644797918236__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 17:59:03 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00], ["has_img", true], ["href", "bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00], ["has_img", false], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00], ["has_img", true], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00], ["has_img", false], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 01:59:06 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 01:59:07 UTC +00:00], ["has_img", true], ["href", "bend.craigslist.comhttp://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 01:59:07 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 4126ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:16:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:01:22 -0800
+
+SyntaxError (/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:26: syntax error, unexpected keyword_end, expecting ')'
+      end      
+         ^
+/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1181455644797918236__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:01:24 -0800
+
+SyntaxError (/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:26: syntax error, unexpected keyword_end, expecting ')'
+      end      
+         ^
+/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__1181455644797918236__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:01:32 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 5]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:02:58 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00], ["has_img", true], ["href", "bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00], ["has_img", false], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00], ["has_img", true], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00], ["has_img", false], ["href", "bellingham.craigslist.comhttp://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:03:00 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:03:02 UTC +00:00], ["has_img", true], ["href", "bend.craigslist.comhttp://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:03:02 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 5403ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:05:16 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:16 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:16 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:16 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:16 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:17 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:17 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:17 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:17 -0800
+  [1m[36mBike Load (1.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 7]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 9]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:05:29 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00], ["has_img", true], ["href", "/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:05:31 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:05:32 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:05:32 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 4351ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:05:38 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:05 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:08:23 -0800
+
+
+Started GET "/mcy/4271468448.html" for 127.0.0.1 at 2014-01-18 18:08:35 -0800
+
+ActionController::RoutingError (No route matches [GET] "/mcy/4271468448.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (47.9ms)
+
+
+Started GET "/mcy/4271468448.html" for 127.0.0.1 at 2014-01-18 18:08:35 -0800
+
+ActionController::RoutingError (No route matches [GET] "/mcy/4271468448.html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (13.6ms)
+  [1m[35mBike Load (0.2ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35mBike Load (0.2ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:12:55 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 11]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 13]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 15]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:13:13 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "bikes"
+Completed 500 Internal Server Error in 2193ms
+
+NoMethodError (undefined method `href' for #<Hash:0x007f83b90081a8>):
+  app/controllers/bikes_controller.rb:19:in `block (2 levels) in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:17:in `each'
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:13:43 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:13:45 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:13:47 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:13:47 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 4956ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.1ms)[0m  SELECT "bikes".* FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:14:10 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 16]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 18]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 20]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:15:13 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:15:15 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:15:18 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:15:18 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 5834ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:18:59 -0800
+
+SyntaxError (/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:36: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4572679525546832618__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.1ms)[0m  SELECT "bikes".* FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:26 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 21]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 22]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 23]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 24]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 25]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:19:34 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:19:35 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 1888ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.1ms)[0m  SELECT "bikes".* FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:19:53 -0800
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 26]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 27]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 28]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 29]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 30]]
+  [1m[35m (0.5ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:24:31 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed 500 Internal Server Error in 1871ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:24:39 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+Completed 500 Internal Server Error in 1266ms
+
+OpenURI::HTTPError (302 Found (Invalid Location URI)):
+  app/controllers/bikes_controller.rb:17:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:28:35 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed 500 Internal Server Error in 807ms
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/bikes_controller.rb:26:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:29:00 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed   in 177290ms
+  [1m[35mBike Load (0.2ms)[0m  SELECT "bikes".* FROM "bikes"
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:32:09 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+Completed   in 46392ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:33:01 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed   in 77248ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:34:23 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10522ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:34 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:34:37 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10188ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:34:47 -0800
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:37:00 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13320ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:13 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:37:21 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10267ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:37:31 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:37:49 -0800
+
+SyntaxError (/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:34: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/jonathankohls/Code/dr650/app/controllers/bikes_controller.rb:44: syntax error, unexpected keyword_end, expecting end-of-input):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__3366422993022940200__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jonathankohls/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:38:07 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4280003232.html"], ["location", "Big Top Powersports"], ["text", "Suzuki V-Strom 650 ABS Adventure"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://abbotsford.en.craigslist.ca/mcd/4230641135.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki KLR 650 Yellow"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", false], ["href", "http://abbotsford.en.craigslist.ca/mcd/4227264076.html"], ["location", "Big Top Powersports"], ["text", "Kawasaki Versys 650"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:08 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.org/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.org/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.org/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcd/4244261834.html"], ["location", "Meridian, ID"], ["text", "2007 Harley-Davidson FXDWG Dyna Wide Glide"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcd/4244402357.html"], ["location", "Meridian, ID"], ["text", "Hard Candy Coloma Gold Flake"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4233603728.html"], ["location", "Nampa"], ["text", "Beautiful 2010 Triumph Thunderbird Special Edition, Trade"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.org/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcd/4244261834.html"], ["location", "Meridian, ID"], ["text", "2007 Harley-Davidson FXDWG Dyna Wide Glide"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcd/4244402357.html"], ["location", "Meridian, ID"], ["text", "Hard Candy Coloma Gold Flake"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4233603728.html"], ["location", "Nampa"], ["text", "Beautiful 2010 Triumph Thunderbird Special Edition, Trade"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.com/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.com/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:09 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:10 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:11 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.org/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:11 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:11 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.org/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:11 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.org/tac/mcd/4287779584.html"], ["location", "SOUTH BOUND HONDA"], ["text", "2004 HONDA XR650 SUPERBIKE/SUPERMOTO"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.org/est/mcy/4286424761.html"], ["location", "Bellevue"], ["text", "1993 SUZUKI DR350P"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.org/tac/mcd/4287779584.html"], ["location", "SOUTH BOUND HONDA"], ["text", "2004 HONDA XR650 SUPERBIKE/SUPERMOTO"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.org/est/mcy/4286424761.html"], ["location", "Bellevue"], ["text", "1993 SUZUKI DR350P"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:12 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/wsc/mcy/4292587347.html"], ["location", "Tigard"], ["text", "1999 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/wsc/mcy/4262691098.html"], ["location", "Bethany"], ["text", "2011 Suzuki DL 650 V-strom ABS"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/mlt/mcy/4284584418.html"], ["location", "North, Portland, Oregon"], ["text", "2012 KLR650 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.org/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/wsc/mcy/4292587347.html"], ["location", "Tigard"], ["text", "1999 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/wsc/mcy/4262691098.html"], ["location", "Bethany"], ["text", "2011 Suzuki DL 650 V-strom ABS"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.com/mlt/mcy/4284584418.html"], ["location", "North, Portland, Oregon"], ["text", "2012 KLR650 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.org/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:13 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.org/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00], ["has_img", true], ["href", "http://eugene.craigslist.org/mcd/4293217763.html"], ["location", "nw oregon"], ["text", "DUAL   SPORT   ( 4 stroke )   1,000 miles"], ["updated_at", Sun, 19 Jan 2014 02:38:14 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.com/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/wsc/mcy/4292587347.html"], ["location", "Tigard"], ["text", "1999 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/wsc/mcy/4262691098.html"], ["location", "Bethany"], ["text", "2011 Suzuki DL 650 V-strom ABS"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/mlt/mcy/4284584418.html"], ["location", "North, Portland, Oregon"], ["text", "2012 KLR650 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://salem.craigslist.com/mcy/4291084665.html"], ["location", "amity"], ["text", "suzuki 1987 650 savage"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/wsc/mcy/4292587347.html"], ["location", "Tigard"], ["text", "1999 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/wsc/mcy/4262691098.html"], ["location", "Bethany"], ["text", "2011 Suzuki DL 650 V-strom ABS"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00], ["has_img", true], ["href", "http://portland.craigslist.org/mlt/mcy/4284584418.html"], ["location", "North, Portland, Oregon"], ["text", "2012 KLR650 Kawasaki KLR 650"], ["updated_at", Sun, 19 Jan 2014 02:38:15 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.com/tac/mcd/4287779584.html"], ["location", "SOUTH BOUND HONDA"], ["text", "2004 HONDA XR650 SUPERBIKE/SUPERMOTO"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.com/est/mcy/4286424761.html"], ["location", "Bellevue"], ["text", "1993 SUZUKI DR350P"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.com/tac/mcd/4287779584.html"], ["location", "SOUTH BOUND HONDA"], ["text", "2004 HONDA XR650 SUPERBIKE/SUPERMOTO"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://seattle.craigslist.com/est/mcy/4286424761.html"], ["location", "Bellevue"], ["text", "1993 SUZUKI DR350P"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://redding.craigslist.org/mcy/4287143035.html"], ["location", "red bluff"], ["text", "motorcycle"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://redding.craigslist.org/mcy/4225898786.html"], ["location", "shasta lake"], ["text", "xr600 plated clean"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://redding.craigslist.org/mcy/4287143035.html"], ["location", "red bluff"], ["text", "motorcycle"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00], ["has_img", true], ["href", "http://redding.craigslist.org/mcy/4225898786.html"], ["location", "shasta lake"], ["text", "xr600 plated clean"], ["updated_at", Sun, 19 Jan 2014 02:38:16 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.com/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.com/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.com/mcy/4293510229.html"], ["location", "north spokane"], ["text", "1999 ktm 640 lc4e"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00], ["has_img", true], ["href", "http://spokane.craigslist.com/mcy/4262839904.html"], ["location", "9 Mile Falls"], ["text", "90 yamaha phazer snowmobile"], ["updated_at", Sun, 19 Jan 2014 02:38:17 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:38:18 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.com/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:18 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:38:18 UTC +00:00], ["has_img", true], ["href", "http://kpr.craigslist.com/mcy/4282719750.html"], ["location", "Richland"], ["text", "F 650 GS BMW 2006 Exhaust and Spark arrestor."], ["updated_at", Sun, 19 Jan 2014 02:38:18 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11471ms (Views: 32.7ms | ActiveRecord: 87.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:19 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:38:24 -0800
+  [1m[35mBike Load (0.5ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 31]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 32]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 33]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 34]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 35]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 36]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 37]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 38]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 39]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 40]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 41]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 42]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 43]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 44]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 45]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 46]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 47]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 48]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 49]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 50]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 51]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 52]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 53]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 54]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 55]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 56]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 57]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 58]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 59]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 60]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 61]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 62]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 63]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 64]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 65]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 66]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 67]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 68]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 69]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 70]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 71]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 72]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 73]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 74]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 75]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 76]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 77]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 78]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 79]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 80]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 81]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 82]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 83]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 84]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 85]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 86]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 87]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 88]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 89]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 90]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 91]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 92]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 93]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 94]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 95]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 96]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 97]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 98]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 99]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 100]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 101]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 102]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 103]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 104]]
+  [1m[35m (0.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 105]]
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 106]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 107]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 108]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 109]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 110]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 111]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 112]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:44:22 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Completed 500 Internal Server Error in 1034ms
+
+NoMethodError (undefined method `text' for #<Hash:0x007f8c452f1a10>):
+  app/controllers/bikes_controller.rb:27:in `block (2 levels) in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:25:in `each'
+  app/controllers/bikes_controller.rb:25:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:14:in `each'
+  app/controllers/bikes_controller.rb:14:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:44:50 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:44:50 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:44:50 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:44:50 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:44:50 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:52 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:44:57 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:57 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:44:57 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:57 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:44:58 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:58 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:44:58 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:44:58 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:45:00 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:45:00 UTC +00:00]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:45:00 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:45:00 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11777ms (Views: 4.5ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:02 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.1ms)[0m  SELECT "bikes".* FROM "bikes"
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:45:11 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT DISTINCT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35mBike Load (0.2ms)[0m  SELECT DISTINCT "bikes".* FROM "bikes"
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "bikes"."id") FROM "bikes"[0m
+  [1m[35mBike Load (0.2ms)[0m  SELECT "bikes".* FROM "bikes" WHERE "bikes"."href" = 'uniq'
+  [1m[36mBike Load (0.3ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(DISTINCT(HREF)) FROM "bikes"
+  [1m[36mBike Load (1.0ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (26.3ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 113]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 114]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 115]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 116]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 117]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 118]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 119]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 120]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 121]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 122]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 123]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 124]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:49:25 -0800
+Processing by BikesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:26 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:26 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:26 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:26 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:28 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:32 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:32 UTC +00:00]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:32 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:32 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:33 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:33 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:33 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:33 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:35 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:35 UTC +00:00]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:35 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:35 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered bikes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11545ms (Views: 4.5ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:49:37 -0800
+  [1m[35mBike Load (0.3ms)[0m  SELECT "bikes".* FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 125]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 126]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 127]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 128]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 129]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 130]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 131]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 132]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 133]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 134]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "bikes" WHERE "bikes"."id" = ?  [["id", 135]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "bikes" WHERE "bikes"."id" = ?[0m  [["id", 136]]
+  [1m[35m (0.5ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:49:49 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:49 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:49 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:49 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.com/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:49 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00], ["has_img", true], ["href", "http://eastoregon.craigslist.com/mcy/4236961388.html"], ["location", "Pendleton"], ["text", "STOLEN !! 2011 DR 650"], ["updated_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00], ["has_img", true], ["href", "http://boise.craigslist.org/mcy/4198062505.html"], ["location", "Caldwell"], ["text", "2005 Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:51 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:55 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:55 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:55 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.com/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:55 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:56 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:56 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:56 UTC +00:00], ["has_img", false], ["href", "http://portland.craigslist.org/clk/mcy/4289772692.html"], ["location", "clark"], ["text", "Parabellum Windshield for Suzuki DR650"], ["updated_at", Sun, 19 Jan 2014 02:49:56 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 19 Jan 2014 02:49:58 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:58 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 19 Jan 2014 02:49:58 UTC +00:00], ["has_img", true], ["href", "http://bellingham.craigslist.org/mcy/4271468448.html"], ["location", "Bellingham"], ["text", "DR650 Adventure Dual Sport 2005"], ["updated_at", Sun, 19 Jan 2014 02:49:58 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "bikes"[0m
+Redirected to 
+Completed 500 Internal Server Error in 10770ms
+
+NoMethodError (undefined method `model_name' for ActiveRecord::Relation::ActiveRecord_Relation_Bike:Class):
+  app/controllers/bikes_controller.rb:7:in `index'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:50:29 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (missing attribute: price):
+     8:   </tr>
+     9:   <% @bikes.each do |bike| %>
+    10:   <tr> 
+    11:     <td><%= bike.price.nil? ? "NA" : bike.price %>
+    12:     <td><%= bike.text %></td>
+    13:     <td><%= bike.location%></td>
+    14:     <td><a href="<%= bike.href %>">The bike</a></td>
+  app/views/bikes/index.html.erb:11:in `block in _app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+  app/views/bikes/index.html.erb:9:in `_app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:50:31 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (missing attribute: price):
+     8:   </tr>
+     9:   <% @bikes.each do |bike| %>
+    10:   <tr> 
+    11:     <td><%= bike.price.nil? ? "NA" : bike.price %>
+    12:     <td><%= bike.text %></td>
+    13:     <td><%= bike.location%></td>
+    14:     <td><a href="<%= bike.href %>">The bike</a></td>
+  app/views/bikes/index.html.erb:11:in `block in _app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+  app/views/bikes/index.html.erb:9:in `_app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:50:33 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (missing attribute: price):
+     8:   </tr>
+     9:   <% @bikes.each do |bike| %>
+    10:   <tr> 
+    11:     <td><%= bike.price.nil? ? "NA" : bike.price %>
+    12:     <td><%= bike.text %></td>
+    13:     <td><%= bike.location%></td>
+    14:     <td><a href="<%= bike.href %>">The bike</a></td>
+  app/views/bikes/index.html.erb:11:in `block in _app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+  app/views/bikes/index.html.erb:9:in `_app_views_bikes_index_html_erb__3166907653492552982_70120199158400'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:50:41 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (missing attribute: price):
+     8:   </tr>
+     9:   <% @bikes.each do |bike| %>
+    10:   <tr> 
+    11:     <td><%= bike.price.nil? ? "NA" : bike.price %>
+    12:     <td><%= bike.text %></td>
+    13:     <td><%= bike.location%></td>
+    14:     <td><a href="<%= bike.href %>">The bike</a></td>
+  app/views/bikes/index.html.erb:11:in `block in _app_views_bikes_index_html_erb___3923747039708848935_70214562764820'
+  app/views/bikes/index.html.erb:9:in `_app_views_bikes_index_html_erb___3923747039708848935_70214562764820'
+
+
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathankohls/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+  [1m[36mBike Load (0.3ms)[0m  [1mSELECT DISTINCT(HREF) FROM "bikes"[0m
+  [1m[35mBike Load (0.3ms)[0m  SELECT DISTINCT "bikes".* FROM "bikes"
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "bikes"."id") FROM "bikes"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 18:53:00 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 19:23:50 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.1ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 19:26:17 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:33 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+Processing by BikesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bikes"
+  [1m[36mBike Load (0.2ms)[0m  [1mSELECT "bikes".* FROM "bikes"[0m
+  Rendered bikes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/bikes.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/bike_searh.css?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/bike_searh.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/bikes.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-18 19:27:42 -0800

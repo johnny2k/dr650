@@ -17,7 +17,9 @@ require 'craigslist'
         if !bike["href"].nil? then
           found_bike["href"] = "#{place}.craigslist.com#{bike["href"]}"
         end
-        found_bike.save!
+	if /dr(\s|.)?650/i.match(bike[:text]) then 
+	  found_bike.save!
+	end
       end
     end
   end

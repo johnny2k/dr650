@@ -1,0 +1,528 @@
+I, [2014-01-16T09:55:25.288519 #7776]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 09:55:25 +0300
+I, [2014-01-16T09:55:25.289607 #7776]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T09:55:25.290785 #7776]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2014-01-16T09:55:25.292099 #7776] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'bikes'):
+  app/controllers/bikes_controller.rb:5:in `index'
+
+
+I, [2014-01-16T09:55:46.163126 #9068]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 09:55:46 +0300
+I, [2014-01-16T09:55:46.178366 #9068]  INFO -- : Processing by BikesController#index as HTML
+E, [2014-01-16T09:55:48.192859 #9068] ERROR -- : SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)
+I, [2014-01-16T09:55:48.193426 #9068]  INFO -- : Completed 500 Internal Server Error in 2015ms
+F, [2014-01-16T09:55:48.195665 #9068] FATAL -- : 
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)):
+  app/controllers/bikes_controller.rb:20:in `block (2 levels) in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:14:in `each'
+  app/controllers/bikes_controller.rb:14:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+I, [2014-01-16T09:56:16.577328 #9068]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 09:56:16 +0300
+I, [2014-01-16T09:56:16.579867 #9068]  INFO -- : Processing by BikesController#index as HTML
+E, [2014-01-16T09:56:18.458870 #9068] ERROR -- : SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)
+I, [2014-01-16T09:56:18.459237 #9068]  INFO -- : Completed 500 Internal Server Error in 1879ms
+F, [2014-01-16T09:56:18.461319 #9068] FATAL -- : 
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "bikes" ("created_at", "has_img", "href", "location", "text", "updated_at") VALUES (?, ?, ?, ?, ?, ?)):
+  app/controllers/bikes_controller.rb:20:in `block (2 levels) in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:14:in `each'
+  app/controllers/bikes_controller.rb:14:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+I, [2014-01-16T09:56:34.125641 #9152]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 09:56:34 +0300
+I, [2014-01-16T09:56:34.151438 #9152]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T09:57:18.597276 #9195]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-16 09:57:18 +0300
+I, [2014-01-16T09:57:18.609338 #9195]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T09:57:19.030063 #9195]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (385.5ms)
+I, [2014-01-16T09:57:19.033318 #9195]  INFO -- : Completed 200 OK in 424ms (Views: 366.5ms | ActiveRecord: 29.0ms)
+I, [2014-01-16T09:57:19.398890 #9195]  INFO -- : Started GET "/stylesheets/application.css" for 184.100.131.48 at 2014-01-16 09:57:19 +0300
+F, [2014-01-16T09:57:19.400388 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T09:57:19.860605 #9195]  INFO -- : Started GET "/javascripts/application.js" for 184.100.131.48 at 2014-01-16 09:57:19 +0300
+F, [2014-01-16T09:57:19.861602 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T09:57:38.445825 #9195]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-16 09:57:38 +0300
+I, [2014-01-16T09:57:38.448253 #9195]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T09:57:39.114153 #9195]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (660.8ms)
+I, [2014-01-16T09:57:39.116265 #9195]  INFO -- : Completed 200 OK in 668ms (Views: 625.5ms | ActiveRecord: 40.4ms)
+I, [2014-01-16T09:57:40.216923 #9195]  INFO -- : Started GET "/stylesheets/application.css" for 184.100.131.48 at 2014-01-16 09:57:40 +0300
+F, [2014-01-16T09:57:40.218498 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T09:57:40.826182 #9195]  INFO -- : Started GET "/javascripts/application.js" for 184.100.131.48 at 2014-01-16 09:57:40 +0300
+F, [2014-01-16T09:57:40.827499 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T09:58:22.698461 #9152]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (0.9ms)
+I, [2014-01-16T09:58:22.700113 #9152]  INFO -- : Completed 200 OK in 108548ms (Views: 4.5ms | ActiveRecord: 14376.3ms)
+I, [2014-01-16T09:58:22.886912 #9195]  INFO -- : Started GET "/stylesheets/application.css" for 76.105.247.13 at 2014-01-16 09:58:22 +0300
+F, [2014-01-16T09:58:22.888082 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T09:58:22.889437 #9152]  INFO -- : Started GET "/javascripts/application.js" for 76.105.247.13 at 2014-01-16 09:58:22 +0300
+F, [2014-01-16T09:58:22.890668 #9152] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T10:06:43.120430 #9195]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 10:06:43 +0300
+I, [2014-01-16T10:06:43.123922 #9195]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T10:06:44.314238 #9195]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1183.3ms)
+I, [2014-01-16T10:06:44.318122 #9195]  INFO -- : Completed 200 OK in 1194ms (Views: 1010.5ms | ActiveRecord: 181.1ms)
+I, [2014-01-16T10:06:44.549561 #9195]  INFO -- : Started GET "/stylesheets/application.css" for 76.105.247.13 at 2014-01-16 10:06:44 +0300
+F, [2014-01-16T10:06:44.550884 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T10:06:44.552123 #9195]  INFO -- : Started GET "/javascripts/application.js" for 76.105.247.13 at 2014-01-16 10:06:44 +0300
+F, [2014-01-16T10:06:44.552955 #9195] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/javascripts/application.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-16T11:31:01.085995 #9590]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-16 11:31:01 +0300
+I, [2014-01-16T11:31:01.096181 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T11:31:02.299634 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1163.3ms)
+I, [2014-01-16T11:31:02.304325 #9590]  INFO -- : Completed 200 OK in 1208ms (Views: 1083.6ms | ActiveRecord: 103.8ms)
+I, [2014-01-16T14:48:05.944422 #9590]  INFO -- : Started GET "/" for 38.100.21.120 at 2014-01-16 14:48:05 +0300
+I, [2014-01-16T14:48:05.947041 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T14:48:07.193144 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1238.5ms)
+I, [2014-01-16T14:48:07.196268 #9590]  INFO -- : Completed 200 OK in 1249ms (Views: 1150.0ms | ActiveRecord: 97.2ms)
+I, [2014-01-16T14:48:08.051891 #9590]  INFO -- : Started GET "/" for 38.100.21.120 at 2014-01-16 14:48:08 +0300
+I, [2014-01-16T14:48:08.052933 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T14:48:09.289533 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1230.6ms)
+I, [2014-01-16T14:48:09.292205 #9590]  INFO -- : Completed 200 OK in 1239ms (Views: 1161.4ms | ActiveRecord: 76.9ms)
+I, [2014-01-16T19:02:22.410413 #9590]  INFO -- : Started GET "/" for 23.239.196.71 at 2014-01-16 19:02:22 +0300
+I, [2014-01-16T19:02:22.412062 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T19:02:23.864379 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1441.8ms)
+I, [2014-01-16T19:02:23.866519 #9590]  INFO -- : Completed 200 OK in 1454ms (Views: 1350.4ms | ActiveRecord: 102.4ms)
+I, [2014-01-16T19:29:43.095135 #9590]  INFO -- : Started GET "/" for 184.22.42.196 at 2014-01-16 19:29:43 +0300
+I, [2014-01-16T19:29:43.096610 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T19:29:44.444801 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1340.4ms)
+I, [2014-01-16T19:29:44.448045 #9590]  INFO -- : Completed 200 OK in 1351ms (Views: 1263.5ms | ActiveRecord: 86.4ms)
+I, [2014-01-16T21:40:57.358019 #9590]  INFO -- : Started HEAD "/" for 195.34.136.110 at 2014-01-16 21:40:57 +0300
+I, [2014-01-16T21:40:57.359364 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T21:40:58.823731 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1457.9ms)
+I, [2014-01-16T21:40:58.825934 #9590]  INFO -- : Completed 200 OK in 1466ms (Views: 1378.9ms | ActiveRecord: 86.5ms)
+I, [2014-01-16T23:56:59.495475 #9590]  INFO -- : Started GET "/" for 66.249.84.63 at 2014-01-16 23:56:59 +0300
+I, [2014-01-16T23:56:59.496715 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-16T23:57:00.836054 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1333.0ms)
+I, [2014-01-16T23:57:00.838711 #9590]  INFO -- : Completed 200 OK in 1342ms (Views: 1253.5ms | ActiveRecord: 87.4ms)
+I, [2014-01-17T00:02:20.578126 #9590]  INFO -- : Started GET "/" for 199.30.228.144 at 2014-01-17 00:02:20 +0300
+I, [2014-01-17T00:02:20.579185 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T00:02:21.890742 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1305.0ms)
+I, [2014-01-17T00:02:21.893417 #9590]  INFO -- : Completed 200 OK in 1314ms (Views: 1219.9ms | ActiveRecord: 93.2ms)
+I, [2014-01-17T02:17:30.430763 #9590]  INFO -- : Started GET "/" for 67.171.180.60 at 2014-01-17 02:17:30 +0300
+I, [2014-01-17T02:17:30.431929 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T02:17:31.769274 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1330.4ms)
+I, [2014-01-17T02:17:31.771163 #9590]  INFO -- : Completed 200 OK in 1339ms (Views: 1254.2ms | ActiveRecord: 84.0ms)
+I, [2014-01-17T02:20:48.545116 #9590]  INFO -- : Started GET "/" for 67.171.180.60 at 2014-01-17 02:20:48 +0300
+I, [2014-01-17T02:20:48.546903 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T02:22:34.790126 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-17T02:22:34.790971 #9590]  INFO -- : Completed 200 OK in 106244ms (Views: 1.4ms | ActiveRecord: 13230.3ms)
+I, [2014-01-17T02:23:09.859786 #9590]  INFO -- : Started GET "/" for 67.171.180.60 at 2014-01-17 02:23:09 +0300
+I, [2014-01-17T02:23:09.861084 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T02:23:10.935573 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1068.1ms)
+I, [2014-01-17T02:23:10.938099 #9590]  INFO -- : Completed 200 OK in 1077ms (Views: 1002.3ms | ActiveRecord: 72.8ms)
+I, [2014-01-17T02:51:51.611116 #9590]  INFO -- : Started GET "/" for 50.53.176.49 at 2014-01-17 02:51:51 +0300
+I, [2014-01-17T02:51:51.612396 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T02:51:52.787658 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1167.4ms)
+I, [2014-01-17T02:51:52.790236 #9590]  INFO -- : Completed 200 OK in 1178ms (Views: 1095.5ms | ActiveRecord: 81.1ms)
+I, [2014-01-17T05:22:23.365031 #9590]  INFO -- : Started GET "/" for 216.38.216.101 at 2014-01-17 05:22:23 +0300
+I, [2014-01-17T05:22:23.366736 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T05:22:24.701510 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1313.1ms)
+I, [2014-01-17T05:22:24.704627 #9590]  INFO -- : Completed 200 OK in 1338ms (Views: 1135.9ms | ActiveRecord: 200.7ms)
+I, [2014-01-17T05:22:26.331508 #9590]  INFO -- : Started GET "/" for 216.38.216.101 at 2014-01-17 05:22:26 +0300
+I, [2014-01-17T05:22:26.332554 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T05:22:27.675902 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1336.1ms)
+I, [2014-01-17T05:22:27.679776 #9590]  INFO -- : Completed 200 OK in 1347ms (Views: 1117.3ms | ActiveRecord: 228.8ms)
+I, [2014-01-17T05:22:40.993410 #9590]  INFO -- : Started GET "/" for 216.38.216.101 at 2014-01-17 05:22:40 +0300
+I, [2014-01-17T05:22:40.995086 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T05:22:42.298139 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1293.8ms)
+I, [2014-01-17T05:22:42.437874 #9590]  INFO -- : Completed 200 OK in 1443ms (Views: 1363.7ms | ActiveRecord: 77.6ms)
+I, [2014-01-17T06:19:43.731935 #9590]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-17 06:19:43 +0300
+I, [2014-01-17T06:19:43.733058 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T06:19:45.106538 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1362.9ms)
+I, [2014-01-17T06:19:45.122772 #9590]  INFO -- : Completed 200 OK in 1388ms (Views: 1299.5ms | ActiveRecord: 87.9ms)
+I, [2014-01-17T06:26:39.523926 #9590]  INFO -- : Started GET "/" for 198.186.192.44 at 2014-01-17 06:26:39 +0300
+I, [2014-01-17T06:26:39.525033 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T06:26:40.865730 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1333.6ms)
+I, [2014-01-17T06:26:40.875078 #9590]  INFO -- : Completed 200 OK in 1350ms (Views: 1263.1ms | ActiveRecord: 85.7ms)
+I, [2014-01-17T06:30:04.267371 #9590]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-17 06:30:04 +0300
+I, [2014-01-17T06:30:04.268447 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T06:30:05.639700 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1360.2ms)
+I, [2014-01-17T06:30:05.644272 #9590]  INFO -- : Completed 200 OK in 1376ms (Views: 1278.9ms | ActiveRecord: 95.6ms)
+I, [2014-01-17T06:40:10.342733 #9590]  INFO -- : Started HEAD "/" for 113.105.65.34 at 2014-01-17 06:40:10 +0300
+I, [2014-01-17T06:40:10.343665 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T06:40:11.662849 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1298.0ms)
+I, [2014-01-17T06:40:11.671094 #9590]  INFO -- : Completed 200 OK in 1327ms (Views: 1240.6ms | ActiveRecord: 85.5ms)
+I, [2014-01-17T07:12:01.028817 #9590]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-17 07:12:01 +0300
+I, [2014-01-17T07:12:01.029876 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T07:12:02.211212 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1175.9ms)
+I, [2014-01-17T07:12:02.212865 #9590]  INFO -- : Completed 200 OK in 1183ms (Views: 1092.2ms | ActiveRecord: 89.6ms)
+I, [2014-01-17T07:42:16.497513 #9590]  INFO -- : Started GET "/" for 66.249.64.29 at 2014-01-17 07:42:16 +0300
+I, [2014-01-17T07:42:16.498498 #9590]  INFO -- : Processing by BikesController#index as */*
+I, [2014-01-17T07:42:17.593404 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1080.8ms)
+I, [2014-01-17T07:42:17.598492 #9590]  INFO -- : Completed 200 OK in 1100ms (Views: 1020.0ms | ActiveRecord: 78.9ms)
+I, [2014-01-17T08:07:27.562076 #9590]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-17 08:07:27 +0300
+I, [2014-01-17T08:07:27.563643 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T08:07:28.838046 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1266.0ms)
+I, [2014-01-17T08:07:28.846057 #9590]  INFO -- : Completed 200 OK in 1282ms (Views: 1051.9ms | ActiveRecord: 228.8ms)
+I, [2014-01-17T21:30:37.538780 #9590]  INFO -- : Started GET "/" for 198.101.238.203 at 2014-01-17 21:30:37 +0300
+I, [2014-01-17T21:30:37.539853 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-17T21:30:38.817825 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1271.8ms)
+I, [2014-01-17T21:30:38.976525 #9590]  INFO -- : Completed 200 OK in 1436ms (Views: 1353.8ms | ActiveRecord: 81.6ms)
+I, [2014-01-17T21:47:32.835703 #9590]  INFO -- : Started GET "/webdav/" for 173.193.120.242 at 2014-01-17 21:47:32 +0300
+F, [2014-01-17T21:47:32.842850 #9590] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/webdav"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-18T00:00:46.505792 #9590]  INFO -- : Started GET "/" for 166.147.88.26 at 2014-01-18 00:00:46 +0300
+I, [2014-01-18T00:00:46.506851 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T00:00:47.803905 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1291.0ms)
+I, [2014-01-18T00:00:47.817732 #9590]  INFO -- : Completed 200 OK in 1311ms (Views: 1228.2ms | ActiveRecord: 81.5ms)
+I, [2014-01-18T00:02:11.003260 #9590]  INFO -- : Started GET "/" for 166.147.88.26 at 2014-01-18 00:02:11 +0300
+I, [2014-01-18T00:02:11.004356 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T00:02:12.148736 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1136.1ms)
+I, [2014-01-18T00:02:12.153781 #9590]  INFO -- : Completed 200 OK in 1149ms (Views: 1060.8ms | ActiveRecord: 86.3ms)
+I, [2014-01-18T01:12:08.251397 #9590]  INFO -- : Started GET "/" for 80.82.64.235 at 2014-01-18 01:12:08 +0300
+I, [2014-01-18T01:12:08.252436 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T01:12:09.659264 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1393.6ms)
+I, [2014-01-18T01:12:09.674979 #9590]  INFO -- : Completed 200 OK in 1422ms (Views: 1123.1ms | ActiveRecord: 298.2ms)
+I, [2014-01-18T06:17:40.777106 #9590]  INFO -- : Started GET "/" for 198.186.192.44 at 2014-01-18 06:17:40 +0300
+I, [2014-01-18T06:17:40.778479 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T06:17:42.033796 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1249.6ms)
+I, [2014-01-18T06:17:42.036533 #9590]  INFO -- : Completed 200 OK in 1258ms (Views: 1161.6ms | ActiveRecord: 95.3ms)
+I, [2014-01-18T07:29:14.084222 #9590]  INFO -- : Started GET "/" for 184.100.131.48 at 2014-01-18 07:29:14 +0300
+I, [2014-01-18T07:29:14.085367 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T07:29:15.322751 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1231.5ms)
+I, [2014-01-18T07:29:15.483244 #9590]  INFO -- : Completed 200 OK in 1398ms (Views: 1319.2ms | ActiveRecord: 77.5ms)
+I, [2014-01-18T09:41:03.891587 #9590]  INFO -- : Started GET "/" for 118.169.38.78 at 2014-01-18 09:41:03 +0300
+I, [2014-01-18T09:41:03.892674 #9590]  INFO -- : Processing by BikesController#index as */*
+I, [2014-01-18T09:41:05.151925 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1245.8ms)
+I, [2014-01-18T09:41:05.163466 #9590]  INFO -- : Completed 200 OK in 1271ms (Views: 1180.0ms | ActiveRecord: 89.3ms)
+I, [2014-01-18T09:46:07.076840 #9590]  INFO -- : Started HEAD "/" for 200.98.142.221 at 2014-01-18 09:46:07 +0300
+I, [2014-01-18T09:46:07.077925 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T09:46:08.341795 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1257.6ms)
+I, [2014-01-18T09:46:08.343454 #9590]  INFO -- : Completed 200 OK in 1265ms (Views: 1184.7ms | ActiveRecord: 79.7ms)
+I, [2014-01-18T11:48:16.312074 #9590]  INFO -- : Started GET "/" for 50.126.88.90 at 2014-01-18 11:48:16 +0300
+I, [2014-01-18T11:48:16.313662 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T11:48:17.600936 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1276.6ms)
+I, [2014-01-18T11:48:17.614781 #9590]  INFO -- : Completed 200 OK in 1301ms (Views: 1061.7ms | ActiveRecord: 238.1ms)
+I, [2014-01-18T14:33:48.025533 #9590]  INFO -- : Started GET "/wp-login.php" for 193.17.208.73 at 2014-01-18 14:33:48 +0300
+F, [2014-01-18T14:33:48.026792 #9590] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-18T14:33:48.418294 #9590]  INFO -- : Started GET "/administrator/index.php" for 193.17.208.73 at 2014-01-18 14:33:48 +0300
+F, [2014-01-18T14:33:48.419532 #9590] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/administrator/index.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-18T14:54:26.372210 #9590]  INFO -- : Started HEAD "/" for 77.50.56.30 at 2014-01-18 14:54:26 +0300
+I, [2014-01-18T14:54:26.373625 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T14:54:27.619861 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1240.0ms)
+I, [2014-01-18T14:54:27.622733 #9590]  INFO -- : Completed 200 OK in 1249ms (Views: 1166.2ms | ActiveRecord: 81.6ms)
+I, [2014-01-18T15:56:50.786564 #9590]  INFO -- : Started HEAD "/" for 95.211.168.82 at 2014-01-18 15:56:50 +0300
+I, [2014-01-18T15:56:50.787510 #9590]  INFO -- : Processing by BikesController#index as */*
+I, [2014-01-18T15:56:51.887957 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1094.9ms)
+I, [2014-01-18T15:56:51.890717 #9590]  INFO -- : Completed 200 OK in 1103ms (Views: 1023.1ms | ActiveRecord: 79.1ms)
+I, [2014-01-18T15:56:52.603418 #9590]  INFO -- : Started GET "/" for 95.211.168.82 at 2014-01-18 15:56:52 +0300
+I, [2014-01-18T15:56:52.604401 #9590]  INFO -- : Processing by BikesController#index as */*
+I, [2014-01-18T15:56:53.705815 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1089.4ms)
+I, [2014-01-18T15:56:53.712547 #9590]  INFO -- : Completed 200 OK in 1108ms (Views: 1016.1ms | ActiveRecord: 89.4ms)
+I, [2014-01-18T16:44:09.689923 #9590]  INFO -- : Started GET "/" for 192.95.22.19 at 2014-01-18 16:44:09 +0300
+I, [2014-01-18T16:44:09.690968 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T16:44:10.921844 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1224.6ms)
+I, [2014-01-18T16:44:10.924668 #9590]  INFO -- : Completed 200 OK in 1234ms (Views: 1149.0ms | ActiveRecord: 83.6ms)
+I, [2014-01-18T19:25:39.049102 #9590]  INFO -- : Started GET "/" for 80.82.64.235 at 2014-01-18 19:25:39 +0300
+I, [2014-01-18T19:25:39.050485 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T19:25:40.308372 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1251.2ms)
+I, [2014-01-18T19:25:40.479034 #9590]  INFO -- : Completed 200 OK in 1427ms (Views: 1123.3ms | ActiveRecord: 302.6ms)
+I, [2014-01-18T19:33:05.836709 #9590]  INFO -- : Started GET "/" for 66.249.64.41 at 2014-01-18 19:33:05 +0300
+I, [2014-01-18T19:33:05.838003 #9590]  INFO -- : Processing by BikesController#index as */*
+I, [2014-01-18T19:33:07.113707 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1261.3ms)
+I, [2014-01-18T19:33:07.137062 #9590]  INFO -- : Completed 200 OK in 1299ms (Views: 1208.1ms | ActiveRecord: 89.6ms)
+I, [2014-01-18T19:39:01.525488 #9590]  INFO -- : Started GET "/" for 208.43.251.182 at 2014-01-18 19:39:01 +0300
+I, [2014-01-18T19:39:01.526534 #9590]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-18T19:39:02.798482 #9590]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1265.8ms)
+I, [2014-01-18T19:39:02.818315 #9590]  INFO -- : Completed 200 OK in 1290ms (Views: 1192.3ms | ActiveRecord: 94.5ms)
+I, [2014-01-18T21:05:09.699588 #9590]  INFO -- : Started GET "/proxy.txt" for 111.73.45.233 at 2014-01-18 21:05:09 +0300
+F, [2014-01-18T21:05:09.718860 #9590] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/proxy.txt"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  passenger (4.0.35) lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:142:in `accept_and_process_next_request'
+  passenger (4.0.35) lib/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+  passenger (4.0.35) lib/phusion_passenger/request_handler.rb:441:in `block (3 levels) in start_threads'
+
+
+I, [2014-01-19T03:01:11.187998 #30121]  INFO -- : Started HEAD "/" for 91.207.159.209 at 2014-01-19 03:01:11 +0300
+I, [2014-01-19T03:01:11.219932 #30121]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:01:12.346752 #30121]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1088.8ms)
+I, [2014-01-19T03:01:12.351575 #30121]  INFO -- : Completed 200 OK in 1131ms (Views: 1021.0ms | ActiveRecord: 82.3ms)
+I, [2014-01-19T03:04:19.833220 #30121]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-19 03:04:19 +0300
+I, [2014-01-19T03:04:19.836189 #30121]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:04:21.002681 #30121]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1160.8ms)
+I, [2014-01-19T03:04:21.005696 #30121]  INFO -- : Completed 200 OK in 1169ms (Views: 1095.8ms | ActiveRecord: 72.2ms)
+I, [2014-01-19T03:21:05.125052 #30121]  INFO -- : Started GET "/" for 208.43.251.180 at 2014-01-19 03:21:05 +0300
+I, [2014-01-19T03:21:05.128723 #30121]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:21:06.320342 #30121]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1184.0ms)
+I, [2014-01-19T03:21:06.424474 #30121]  INFO -- : Completed 200 OK in 1296ms (Views: 1214.3ms | ActiveRecord: 80.3ms)
+I, [2014-01-19T03:34:39.918011 #30121]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-19 03:34:39 +0300
+I, [2014-01-19T03:34:39.919691 #30121]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:36:41.572421 #30121]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (0.1ms)
+I, [2014-01-19T03:36:41.574311 #30121]  INFO -- : Completed 200 OK in 121654ms (Views: 2.7ms | ActiveRecord: 14803.9ms)
+I, [2014-01-19T03:37:05.208694 #30121]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-19 03:37:05 +0300
+I, [2014-01-19T03:37:05.210090 #30121]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:37:06.417868 #30121]  INFO -- :   Rendered bikes/index.html.erb within layouts/application (1200.0ms)
+I, [2014-01-19T03:37:06.425086 #30121]  INFO -- : Completed 200 OK in 1215ms (Views: 1136.2ms | ActiveRecord: 77.1ms)
+I, [2014-01-19T03:40:41.411739 #32662]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-19 03:40:41 +0300
+I, [2014-01-19T03:40:41.423294 #32662]  INFO -- : Processing by BikesController#index as HTML
+I, [2014-01-19T03:40:43.104051 #32662]  INFO -- : Completed 500 Internal Server Error in 1680ms
+F, [2014-01-19T03:40:43.105639 #32662] FATAL -- : 
+TypeError (no implicit conversion of Hash into String):
+  app/controllers/bikes_controller.rb:20:in `match'
+  app/controllers/bikes_controller.rb:20:in `block (2 levels) in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:15:in `each'
+  app/controllers/bikes_controller.rb:15:in `block in search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:14:in `each'
+  app/controllers/bikes_controller.rb:14:in `search_all_nearby_for_bikes'
+  app/controllers/bikes_controller.rb:6:in `index'
+
+
+I, [2014-01-19T03:41:50.732150 #367]  INFO -- : Started GET "/" for 76.105.247.13 at 2014-01-19 03:41:50 +0300
+I, [2014-01-19T03:41:50.747084 #367]  INFO -- : Processing by BikesController#index as HTML
